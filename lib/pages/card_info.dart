@@ -17,7 +17,7 @@ class _ItemsState extends State<Items> {
       child: Row(
         children: [
           const Text(
-            "Expences",
+            "Expenses",
             style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
           ),

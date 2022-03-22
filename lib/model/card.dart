@@ -17,22 +17,21 @@ class Cardd {
 
 List<Cardd> cards = [
   const Cardd(
-      logo:
-          "images/visa.png" ,
+      logo: "images/visa.png",
       number: " ••••     ••••     ••••     5678",
-      title: "VISA",
-      plan: "PLATINUM",
+      title: "STANDARD ",
+      plan: "2% FOR 30 DAYS",
       color: [Color(0xFF7017FF), Color(0xFF8138FF)]),
   const Cardd(
       logo: "images/icons8-mastercard-512.png",
       number: " ••••     ••••     ••••     2304",
-      title: "MASTERCARD",
-      plan: "PREMIUM",
+      title: "GOLD",
+      plan: "4% FOR 6 DAYS",
       color: [Color(0xff7F00FF), Color(0xffE100FF)]),
   const Cardd(
-      logo: "images/icons8-paypal-480.png",
+      logo: "images/platinum.png",
       number: " ••••     ••••     ••••     4783",
-      title: "PAYPAL",
-      plan: "PLATINUM",
+      title: "PLATINUM",
+      plan: "5% FOR 12 DAYS",
       color: [Color(0xff005c97), Color(0xff363795)]),
 ];

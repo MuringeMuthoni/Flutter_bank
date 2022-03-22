@@ -10,8 +10,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-
-
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
 
@@ -27,8 +25,6 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
   Animation<double>? _prograsser;
 
   bool isOpen = true; // For show card info.
-  
-
 
   @override
   void initState() {
@@ -82,7 +78,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                         width: we * 0.07,
                       ),
                       const Text(
-                        "HOME",
+                        "H&S MICROFINANCE",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, letterSpacing: 1),
                       ),
@@ -104,7 +100,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                   ),
                 )
               : FadeInDown(
-                duration: const Duration(milliseconds: 400),
+                  duration: const Duration(milliseconds: 400),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -168,7 +164,9 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                       controller: _controllerPage,
                       itemCount: cards.length,
                       clipBehavior: Clip.none,
-                      physics: isOpen ? const BouncingScrollPhysics() : const NeverScrollableScrollPhysics(),
+                      physics: isOpen
+                          ? const BouncingScrollPhysics()
+                          : const NeverScrollableScrollPhysics(),
                       itemBuilder: (context, i) {
                         return Transform.rotate(
                             angle: _rotection.value * pi / 180,
@@ -294,7 +292,8 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-            isOpen ? Positioned(
+          isOpen
+              ? Positioned(
                   left: we * 0.01,
                   height: he * 0.75,
                   child: FadeAnimation(
@@ -306,7 +305,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Transactions",
+                            "Services we offer",
                             style: GoogleFonts.lato(
                                 color: Colors.white,
                                 fontSize: 23,
@@ -320,62 +319,80 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
-                ): Positioned(
+                )
+              : Positioned(
                   left: we * 0.4,
                   top: he * 0.17,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    FadeInRight(
-                      duration: const Duration(milliseconds: 500),
-                      child: Text("\$ ${(_prograsser!.value * 8900).round()}",style: const TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold),)),
-                    SizedBox(
-                      height:  he * 0.05,
-                    ),
-                    FadeInRight(
-                      duration: const Duration(milliseconds: 600),
-                      child: Row(
-                        children: [
-                          Icon(Icons.credit_card_outlined,color: Colors.white.withOpacity(0.4),size: 28,),
-                          SizedBox(
-                            width: we  * 0.04,
-                          ),
-                          const Text("Bank card",style: TextStyle(color: Colors.white,))
-                        ],
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      FadeInRight(
+                          duration: const Duration(milliseconds: 500),
+                          child: Text(
+                            "\$ ${(_prograsser!.value * 8900).round()}",
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold),
+                          )),
+                      SizedBox(
+                        height: he * 0.05,
                       ),
-                    ),
-                SizedBox(
-                      height: he * 0.02
-                    ),
-                  FadeInRight(
-                    duration: const Duration(milliseconds: 700),
-                    child: Row(
-                        children: [
-                          Icon(Icons.payments_outlined,color: Colors.white.withOpacity(0.4),size:28),
-                          SizedBox(
-                            width: we  * 0.04,
-                          ),
-                          const Text("Bank account",style: TextStyle(color: Colors.white,))
-                        ],
+                      FadeInRight(
+                        duration: const Duration(milliseconds: 600),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.credit_card_outlined,
+                              color: Colors.white.withOpacity(0.4),
+                              size: 28,
+                            ),
+                            SizedBox(
+                              width: we * 0.04,
+                            ),
+                            const Text("Bank card",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ))
+                          ],
+                        ),
                       ),
-                  ),
-                    SizedBox(
-                      height: he * 0.02
-                    ),
-                  FadeInRight(
-                    duration: const Duration(milliseconds: 800),
-                     child: Row(
-                        children: [
-                          Icon(Icons.paid_outlined,color: Colors.white.withOpacity(0.4),size: 28),
-                          SizedBox(
-                            width: we  * 0.04,
-                          ),
-                          const Text("Pay",style: TextStyle(color: Colors.white,))
-                        ],
+                      SizedBox(height: he * 0.02),
+                      FadeInRight(
+                        duration: const Duration(milliseconds: 700),
+                        child: Row(
+                          children: [
+                            Icon(Icons.payments_outlined,
+                                color: Colors.white.withOpacity(0.4), size: 28),
+                            SizedBox(
+                              width: we * 0.04,
+                            ),
+                            const Text("Bank account",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ))
+                          ],
+                        ),
                       ),
-                   ),
-                  ],
-                )),
+                      SizedBox(height: he * 0.02),
+                      FadeInRight(
+                        duration: const Duration(milliseconds: 800),
+                        child: Row(
+                          children: [
+                            Icon(Icons.paid_outlined,
+                                color: Colors.white.withOpacity(0.4), size: 28),
+                            SizedBox(
+                              width: we * 0.04,
+                            ),
+                            const Text("Pay",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ))
+                          ],
+                        ),
+                      ),
+                    ],
+                  )),
           SizedBox(height: we * 0.01),
           isOpen
               ? Positioned(
@@ -400,7 +417,13 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                             SizedBox(
                               height: he * 0.02,
                             ),
-                            const Widget_Card(description: "Entertainment", icon:FontAwesomeIcons.apple, price:  "- 500.00 USD", time:  "09:20 AM", title: "iTunes",),
+                            const Widget_Card(
+                              description: "Entertainment",
+                              icon: FontAwesomeIcons.apple,
+                              price: "- 500.00 USD",
+                              time: "09:20 AM",
+                              title: "iTunes",
+                            ),
                             Container(
                               margin: EdgeInsets.only(left: we * 0.26),
                               width: we * 0.67,
@@ -408,7 +431,13 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                                 color: Colors.white.withOpacity(0.5),
                               ),
                             ),
-                            const Widget_Card(icon:FontAwesomeIcons.googlePay, description: 'Entertainment', time: "9:20 AM" , price: "- 450.00 USD", title:"GooglePay",),                
+                            const Widget_Card(
+                              icon: FontAwesomeIcons.googlePay,
+                              description: 'Entertainment',
+                              time: "9:20 AM",
+                              price: "- 450.00 USD",
+                              title: "GooglePay",
+                            ),
                             SizedBox(
                               height: he * 0.035,
                             ),
@@ -424,13 +453,13 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                             SizedBox(
                               height: he * 0.02,
                             ),
-                             const Widget_Card(
-                                  icon: FontAwesomeIcons.amazon,
-                                  title: "Amazon",
-                                  description:"Entertainment", 
-                                  price:"- 200.00 USD", 
-                                  time: "02:10 AM",
-                                ),
+                            const Widget_Card(
+                              icon: FontAwesomeIcons.amazon,
+                              title: "Amazon",
+                              description: "Entertainment",
+                              price: "- 200.00 USD",
+                              time: "02:10 AM",
+                            ),
                             Container(
                               margin: EdgeInsets.only(left: we * 0.26),
                               width: we * 0.67,
@@ -443,29 +472,17 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                   ),
                 )
               : Positioned(
-                left: we * 0.07,
-                top: he * 0.51,
-                child: Column(
-                  children: [
-                    const Items(),
-                    BounceInDown(child: const Chart())
-                  ],
-                ),
-              )
+                  left: we * 0.07,
+                  top: he * 0.51,
+                  child: Column(
+                    children: [
+                      const Items(),
+                      BounceInDown(child: const Chart())
+                    ],
+                  ),
+                )
         ]),
       ),
     );
   }
 }
-                           
-                            
-                  
-                              
-                                
-                                
-                                             
-                          
-                                           
-                                
-                                
-                        
