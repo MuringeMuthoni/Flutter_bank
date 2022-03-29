@@ -1,7 +1,12 @@
 bank
 2.16
+<<<<<<< HEAD
 file:///C:/Users/maxma/Desktop/New%20folder/
 file:///C:/Users/maxma/Desktop/New%20folder/lib/
+=======
+file:///C:/Users/maxma/microfinance/Flutter_bank/
+file:///C:/Users/maxma/microfinance/Flutter_bank/lib/
+>>>>>>> 52051ad21880e100a3c5ae52a65435cba5413e76
 animate_do
 2.12
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/animate_do-2.1.0/
